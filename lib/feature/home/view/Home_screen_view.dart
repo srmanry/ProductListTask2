@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:productlist/feature/home/controller/product_controller.dart';
 import 'package:productlist/feature/shimmer/home_view_shimmer.dart';
@@ -38,7 +39,7 @@ class HomeScreenView extends StatelessWidget {
             ),
 Expanded(
   child: Obx((){return !controller.isLoading.value?
-  const HomeViewShimmer(height: 200,width: 200,):
+   HomeViewShimmer(height: 200.h,width: 200.w,):
 
   Obx(
     ()=> GridView.builder(
@@ -61,19 +62,14 @@ Expanded(
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8),
                 child: Text("\$${product.price}", style: TextStyle(color: Colors.green), ),),
-            ],
-          ),
-        );
-      },
-    ),
-  );})),
-        ],
-        ),
+            ],),);
+        },),);})),
+        ],),
       ),
     );
   }
 
-  }
+}
 
 
 

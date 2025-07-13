@@ -53,9 +53,7 @@ class ProductController extends GetxController {
           final matchCategory =selectedCategory.value == 'All' || product.category == selectedCategory.value;
           print("MatchCar...........$matchCategory");
           final matchSearch = product.title.toLowerCase().contains(
-
-            searchText.value.toLowerCase(),
-          );
+            searchText.value.toLowerCase(),);
           print("final Matct....${matchCategory && matchSearch} Match search.....${matchSearch}");
           return matchCategory && matchSearch;
         }).toList();
@@ -72,7 +70,6 @@ class ProductController extends GetxController {
   void onCategoryChanged(String? category) {
     print("onchange$category ");
     if (category != null) {
-
       selectedCategory.value = category;
       applyFilters();
     }
